@@ -17,6 +17,7 @@ describe('Register ', () => {
     cy.get('.text-center').should('be.visible');  // verify text "Tell us your name" visible
     cy.get('.order-2').click(); //click button Cancel
   })
+  
   it('Register as Jobseeker via email [Next]', () => {
     //Page 1 -Biodata
     cy.get('#dealls-navbar-register-btn').click();  // Klik button Register/Daftar
@@ -25,7 +26,10 @@ describe('Register ', () => {
     cy.get(1000);
     cy.get('.gap-6 > .flex > .font-bold').click(); // click button ENG for change language
     cy.get('.text-center').should('be.visible');  // verify text "Tell us your name" visible
-    cy.get('#fullName').type ('Kiki Mira tania'); // input fullName
+
+    const randomNum = Math.floor(Math.random() * 100000);
+    const fullName = `UserTest${randomNum}`;
+    cy.get('#fullName').type (fullName); // input fullName
     cy.get('.order-1'). click(); //click button next
     cy.get('.flex.text-center > .flex > .font-bold').should('be.visible').contains('Let’s Build Profile That Attracts Employers.');
     cy.get('.flex.text-center > .mt-2').should('be.visible').contains('Our platform has 1.200+ daily active recruiters. Let them contact you with exciting offers.');
@@ -34,7 +38,9 @@ describe('Register ', () => {
     cy.contains('.ant-select-item-option-content', 'Actively looking for the next 3 months').click()
     cy.get('#whatsapp').type('6281112233');
     cy.wait(1000)
-    cy.get('#email').type('akak1wqdwq@yopmail.com');
+    //Email
+    const email = `user${Math.floor(Math.random() * 10000)}@yopmail.com`;
+    cy.get('#email').type(email);
     cy.wait(2000)
     cy.get('#campus').type('Uni').click();
     cy.wait(2000);
@@ -42,6 +48,8 @@ describe('Register ', () => {
     cy.get('#eligibility').click({ force: true });
     cy.contains('.ant-select-item-option-content', '4th Year Student').click();
     cy.get('.order-1').click();
+
+
     //  page 2 - Skip CV
     cy.contains('Skip for now, my CV is not ready', { timeout: 10000 }).should('be.visible');
     cy.contains('button', 'Skip for now, my CV is not ready').click();
@@ -69,8 +77,7 @@ describe('Register ', () => {
 
    // welcome dealls [banner]
    //cy.get('.ant-modal-body').should('be.visible');
-   cy.wait(1000);
-   cy.get('article.flex > .ant-btn').click();
-
+   cy.wait(3000);
+   cy.get('.ant-modal-close-x').click();
   })
 })

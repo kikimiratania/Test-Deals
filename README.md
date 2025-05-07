@@ -1,10 +1,16 @@
- Dealss Test:
- start:
-1. Install dependencies: npm install
-2. Open Cypress Test Runner: npx cypress open
-3. Open Register.cy.js of if you have account u run login.cy.js
-4. Open
- Mentoring.cy.js
+Dealls - Mentoring Feature
+The Mentoring feature in the Dealls app allows users to find professional mentors, book sessions, manage schedules, and leave reviews.
+
+Main Features
+- User registration & login
+- Search mentors by category
+- Book mentoring sessions
+
+Technologi Used : Cypress
+How to Run
+1. Clone the Repository : git clone https://github.com/kikimiratania/Test-Dealls.git
+2. Install Dependency : npm install cypress --save -dev , cd client  --> npm install
+3. Testing : npx cypress open
 
 
 project-root/
@@ -17,10 +23,6 @@ project-root/
 ├── cypress.config.js       # Cypress config
 ├── package.json
 └── README.md
-
-
- Features
-✅ End-to-End testing using Cypress
 
 
 example test:
