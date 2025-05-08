@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Run TEST-DEALS
+name: Run test-dealls
 
 # Controls when the workflow will run
 on:
@@ -31,6 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        
       - name: Fix Cypress permission issue
         run: chmod +x ./node_modules/.bin/cypress
  
